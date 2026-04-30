@@ -9,6 +9,25 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
+    <name>EnesRtpZone API</name>
+    <description>EnesRtpZone Public API</description>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>enes9899</id>
+            <name>Enes9899</name>
+            <url>https://github.com/Enes9899</url>
+        </developer>
+    </developers>
+
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -102,6 +121,16 @@
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <minimizeJar>true</minimizeJar>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Built-By>Enes9899</Built-By>
+                                        <Implementation-Vendor>Enes9899</Implementation-Vendor>
+                                        <Implementation-Title>EnesRtpZone</Implementation-Title>
+                                        <Implementation-Version>1.0</Implementation-Version>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
                         </configuration>
                     </execution>
                 </executions>
